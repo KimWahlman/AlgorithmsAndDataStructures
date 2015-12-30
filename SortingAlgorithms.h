@@ -13,8 +13,7 @@ class Sorting
         ~Sorting() { delete[] mSortedArray; }
 
         // Sort in Ascending order
-        inline void BubbleArrayAscend(int *a, int _size)
-        {
+        inline void BubbleArrayAscend(int *a, int _size) {
             mSize = _size;
             mSortedArray = new int[_size];
             int i = 0, j = 0, temp = 0;
@@ -30,8 +29,7 @@ class Sorting
            mSortedArray = a;
         }
         // Sort in Descending order
-        inline void BubbleArrayDescend(int *a, int _size)
-        {
+        inline void BubbleArrayDescend(int *a, int _size) {
             mSize = _size;
             mSortedArray = new int[_size];
             int i = 0, j = 0, temp = 0;
@@ -87,10 +85,8 @@ class Sorting
             mSortedArray = a;
         }
 
-        inline void InsertionSortVector(std::vector<int> &a)
-        {
-            for(unsigned int i = 1; i < a.size(); i++)
-            {
+        inline void InsertionSortVector(std::vector<int> &a) {
+            for(unsigned int i = 1; i < a.size(); i++) {
                 int j = i, temp = 0;
                 while(j > 0 && a[ j - 1 ] > a[ j ]) {
                     temp = a[ j ];
@@ -102,16 +98,12 @@ class Sorting
             mSortedVector = a;
         }
 
-        inline void printSortedVector() const
-        {
+        inline void printSortedVector() const {
             for(unsigned int i = 0; i < mSortedVector.size(); i++)
-            {
                 std::cout << GetVector()[i] << ", ";
-            }
         }
 
-        inline void printSortedArray() const
-        {
+        inline void printSortedArray() const {
             for(unsigned int i = 0; i < mSize; i++)
                 std::cout << mSortedArray[i] << ", ";
         }
