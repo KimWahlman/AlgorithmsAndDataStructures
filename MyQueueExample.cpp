@@ -19,11 +19,9 @@ int main() {
 
 	mq.Example();
 
-	std::cout << mq.GetElement(0) << "\n";
-	mq.Pop();
-	std::cout << mq.GetElement(0) << "\n";
-	mq.Pop();
-	std::cout << mq.GetElement(0) << "\n";
+	std::cout << mq.Pop() << "\n";
+	std::cout << mq.Pop() << "\n";
+	std::cout << mq.Pop() << "\n";
 	std::cin.get();
 	return 0;
 }

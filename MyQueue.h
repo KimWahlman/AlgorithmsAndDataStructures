@@ -51,9 +51,11 @@ public:
 
 	// Pops from the front
 	// O(n^2)
-	inline void Pop() {
+	inline int Pop() {
 		if (mCurrentElement > 0) {
 			int* temp = new int[mSize];
+			int fetchTemp = mArray[0];
+
 			for (unsigned int i = 0; i < mSize; i++) {
 				temp[i] = mArray[i + 1];
 			}
@@ -63,16 +65,18 @@ public:
 				mArray[i] = temp[i];
 			}
 			mCurrentElement--;
+			return fetchTemp;
 		}
 	}
 
-	inline int GetElement(int x) const {
-		if (x > mCurrentElement - 1) {
-			std::cout << "Element " << x << " doesn't exist!\n";
-			return -1;
-		}
-		return mArray[x];
-	}
+	//inline int GetElement(int x) const {
+	//	int temp = mArray[x];
+	//	if (x > mCurrentElement - 1) {
+	//		std::cout << "Element " << x << " doesn't exist!\n";
+	//		return -1;
+	//	}
+	//	return mArray[x];
+	//}
 
 	inline int GetSize() const { return mSize; }
 
@@ -94,11 +98,9 @@ public:
 			Push(779);
 			Push(99923);
 
-			std::cout << GetElement(0) << "\n";
-			Pop();
-			std::cout << GetElement(0) << "\n";
-			Pop();
-			std::cout << GetElement(0) << "\n";
+			std::cout << Pop() << "\n";
+			std::cout << Pop() << "\n";
+			std::cout << Pop() << "\n";
 			std::cin.get();
 
 			delete[] mArray;
