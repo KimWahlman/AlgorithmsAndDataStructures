@@ -50,7 +50,7 @@ public:
 	}
 
 	// Pops from the front
-	// O(n^2)
+	// O(n)
 	inline int Pop() {
 		if (mCurrentElement > 0) {
 			int* temp = new int[mSize];
