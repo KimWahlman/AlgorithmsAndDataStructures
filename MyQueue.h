@@ -3,9 +3,9 @@
 #include <iostream>
 
 class MyQueue {
-	int*		mArray;            // integer that will be used to create an array of size X + 10.
+	int*			mArray;            // integer that will be used to create an array of size X + 10.
 	unsigned int	mSize,              // Current size of the array.
-			mCurrentElement;    // Current last used element
+					mCurrentElement;    // Current last used element
 
 	inline void NewSize() {
 		std::cout << "Current array full, resizing with 10, new size is ";
