@@ -72,6 +72,13 @@ public:
 	inline Node* Search(int valueToFind) {
 		return Search(valueToFind, root);
 	}
+
+	inline int SearchMin(Node* leaf) {
+		if (leaf->left == NULL)
+			return leaf->value;
+		else
+			return SearchMin(leaf->left);
+	}
 };
 
 #endif
