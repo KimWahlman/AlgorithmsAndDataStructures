@@ -98,6 +98,21 @@ class Sorting
             mSortedVector = a;
         }
 
+		inline void SelectionSort(int *arr, int size) {
+			mSize = size;
+			mSortedArray = new int[size];
+			for (unsigned int last = size - 1; last >= 1; last--) {
+				unsigned int indexOfLargest = 0;
+				for (unsigned int index = 1; index <= last; index++)
+					if (arr[index] > arr[indexOfLargest])
+						indexOfLargest = index;
+				unsigned int temp = arr[indexOfLargest];
+				arr[indexOfLargest] = arr[last];
+				arr[last] = temp;
+			}
+			mSortedArray = arr;
+		}
+
         inline void printSortedVector() const {
             for(unsigned int i = 0; i < mSortedVector.size(); i++)
                 std::cout << GetVector()[i] << ", ";
